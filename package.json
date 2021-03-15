@@ -4,7 +4,7 @@
   "description": "Optimizer Package",
   "scripts": {
     "xspeedit": "ts-node src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "tsc"
   },
   "author": "Djibril Dieng",

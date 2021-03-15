@@ -10,7 +10,7 @@ export class AppController {
   ) {
     this.consoleService.createCommand(
       {
-        command: 'basic-filled <input>',
+        command: 'basic-filled [input]',
         description: 'Take items one by one and fill the boxes'
       },
       this.basicFilledBoxes,
