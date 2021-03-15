@@ -23,6 +23,10 @@ describe('AppController', () => {
         '01234/5/6/7/8/9'
       )
     })
+
+    it('should fail when input contains a letter', () => {
+        expect(appController.basicFilledBoxes('1234a56789')).toBe(undefined)
+      })
   })
 
   describe('optimizedFilledBoxes', () => {
@@ -31,5 +35,9 @@ describe('AppController', () => {
         '910/82/73/64/5'
       )
     })
+
+    it('should fail when input contains a letter', () => {
+        expect(appController.optimisedFilledBoxes('1234a56789')).toBe(undefined)
+      })
   })
 })
