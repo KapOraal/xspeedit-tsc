@@ -30,4 +30,23 @@ describe('AppService', () => {
       ).toBe('01234/5/6/7/8/9')
     })
   })
+
+  describe('optimizedFilledBoxes', () => {
+    it('should return optimized filled boxes', () => {
+      expect(
+        service.optimizedFill([
+            '0',
+            '1',
+            '2',
+            '3',
+            '4',
+            '5',
+            '6',
+            '7',
+            '8',
+            '9'
+        ])
+      ).toBe('910/82/73/64/5')
+    })
+  })
 })
