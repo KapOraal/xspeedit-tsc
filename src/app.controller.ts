@@ -16,6 +16,15 @@ export class AppController {
       this.basicFilledBoxes,
       this.consoleService.getCli()
     )
+
+    this.consoleService.createCommand(
+      {
+        command: 'optimized-filled [input]',
+        description: 'Use the minimum of boxes as possible'
+      },
+      this.optimisedFilledBoxes,
+      this.consoleService.getCli()
+    )
   }
 
   basicFilledBoxes = (input: string): string => {
@@ -31,5 +40,20 @@ export class AppController {
     const basicBoxes = this.appService.basicFill(items)
     console.log('Basic Fill    :  ' + basicBoxes)
     return basicBoxes
+  }
+
+  optimisedFilledBoxes = (input: string): string => {
+
+    const isDigitString = (input: string) => /^\d+$/.test(input)
+
+    if (!isDigitString(input)) {
+      console.log(`The input mus only contains digits`)
+      return
+    }
+
+    const [...items] = input
+    const optimizedBoxes = this.appService.optimizedFill(items)
+    console.log('Optimized Fill    :  ' + optimizedBoxes)
+    return optimizedBoxes
   }
 }
