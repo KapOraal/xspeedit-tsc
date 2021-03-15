@@ -24,4 +24,12 @@ describe('AppController', () => {
       )
     })
   })
+
+  describe('optimizedFilledBoxes', () => {
+    it('should return optimized filled boxes', () => {
+      expect(appController.optimisedFilledBoxes('0123456789')).toBe(
+        '910/82/73/64/5'
+      )
+    })
+  })
 })
