@@ -25,28 +25,28 @@ export class AppService {
   }
 
   fillBox(items: string[], boxes: string[]): string[] {
-    let [boxItems, ...otherItems] = items.sort(
+    let [firstItem, ...otherItems] = items.sort(
       (a: string, b: string) => parseInt(b) - parseInt(a)
     )
     const leftoverItems = [...otherItems]
 
     while (otherItems.length > 0) {
       const [firstFit, ...otherFits] = otherItems.filter(
-        this.filterItems(boxItems)
+        this.filterItems(firstItem)
       )
       if (firstFit) {
-        boxItems += firstFit
+        firstItem += firstFit
         leftoverItems.splice(leftoverItems.indexOf(firstFit), 1)
       }
       otherItems = otherFits
     }
-    boxes.push(boxItems)
+    boxes.push(firstItem)
 
     return leftoverItems
   }
 
-  filterItems(boxItems: string) {
-    const [...items] = boxItems
+  filterItems(firstItem: string) {
+    const [...items] = firstItem
     return (item: string) =>
       parseInt(item) +
       items.reduce(
