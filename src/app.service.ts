@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common'
 
 @Injectable()
 export class AppService {
-  basicFill(items: string[]): string {
+  basicFilling(items: string[]): string {
     let boxCapacity = 10
     return items.reduce((acc: string, size: string) => {
       if (boxCapacity - parseInt(size, 10) < 0) {
@@ -14,7 +14,7 @@ export class AppService {
     }, '')
   }
 
-  optimizedFill(items: string[]) {
+  optimizedFilling(items: string[]) {
     const boxes: string[] = []
     let leftoverItems = this.fillBox(items, boxes)
     while (leftoverItems.length > 0) {

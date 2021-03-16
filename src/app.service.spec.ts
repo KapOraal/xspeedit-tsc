@@ -15,7 +15,7 @@ describe('AppService', () => {
   describe('basicFilledBoxes', () => {
     it('should return a basic filled boxes', () => {
       expect(
-        service.basicFill([
+        service.basicFilling([
           '0',
           '1',
           '2',
@@ -34,7 +34,7 @@ describe('AppService', () => {
   describe('optimizedFilledBoxes', () => {
     it('should return optimized filled boxes', () => {
       expect(
-        service.optimizedFill([
+        service.optimizedFilling([
             '0',
             '1',
             '2',

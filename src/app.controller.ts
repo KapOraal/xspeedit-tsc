@@ -10,24 +10,24 @@ export class AppController {
   ) {
     this.consoleService.createCommand(
       {
-        command: 'basic-filled [input]',
+        command: 'basic-filling [input]',
         description: 'Take items one by one and fill the boxes'
       },
-      this.basicFilledBoxes,
+      this.basicBoxFilling,
       this.consoleService.getCli()
     )
 
     this.consoleService.createCommand(
       {
-        command: 'optimized-filled [input]',
+        command: 'optimized-filling [input]',
         description: 'Use the minimum of boxes as possible'
       },
-      this.optimisedFilledBoxes,
+      this.optimisedBoxFilling,
       this.consoleService.getCli()
     )
   }
 
-  basicFilledBoxes = (input: string): string => {
+  basicBoxFilling = (input: string): string => {
 
     const isNumber = (input: string) => /^\d+$/.test(input)
 
@@ -37,12 +37,12 @@ export class AppController {
     }
 
     const [...items] = input
-    const basicBoxes = this.appService.basicFill(items)
-    console.log('Basic Fill    :  ' + basicBoxes)
+    const basicBoxes = this.appService.basicFilling(items)
+    console.log('Basic Filling Box   :  ' + basicBoxes)
     return basicBoxes
   }
 
-  optimisedFilledBoxes = (input: string): string => {
+  optimisedBoxFilling = (input: string): string => {
 
     const isDigitString = (input: string) => /^\d+$/.test(input)
 
@@ -52,8 +52,8 @@ export class AppController {
     }
 
     const [...items] = input
-    const optimizedBoxes = this.appService.optimizedFill(items)
-    console.log('Optimized Fill    :  ' + optimizedBoxes)
+    const optimizedBoxes = this.appService.optimizedFilling(items)
+    console.log('Optimized Filling Box    :  ' + optimizedBoxes)
     return optimizedBoxes
   }
 }

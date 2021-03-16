@@ -19,25 +19,25 @@ describe('AppController', () => {
 
   describe('basicFilledBoxes', () => {
     it('should return boxes filled basically', () => {
-      expect(appController.basicFilledBoxes('0123456789')).toBe(
+      expect(appController.basicBoxFilling('0123456789')).toBe(
         '01234/5/6/7/8/9'
       )
     })
 
     it('should fail when input contains a letter', () => {
-        expect(appController.basicFilledBoxes('1234a56789')).toBe(undefined)
+        expect(appController.basicBoxFilling('1234a56789')).toBe(undefined)
       })
   })
 
   describe('optimizedFilledBoxes', () => {
     it('should return optimized filled boxes', () => {
-      expect(appController.optimisedFilledBoxes('0123456789')).toBe(
+      expect(appController.optimisedBoxFilling('0123456789')).toBe(
         '910/82/73/64/5'
       )
     })
 
     it('should fail when input contains a letter', () => {
-        expect(appController.optimisedFilledBoxes('1234a56789')).toBe(undefined)
+        expect(appController.optimisedBoxFilling('1234a56789')).toBe(undefined)
       })
   })
 })
